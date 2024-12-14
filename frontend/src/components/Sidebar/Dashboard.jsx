@@ -18,7 +18,7 @@ const Dashboard = () => {
     return (
         <div className="flex flex-col md:flex-row min-h-screen bg-gradient-to-r from-purple-200 to-purple-100 text-gray-700">
             {/* Sidebar */}
-            <aside className={`fixed md:relative z-50 bg-white rounded-xl shadow-md w-4/5 md:w-1/5 p-4 transition-transform transform md:translate-x-0 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
+            <aside className={`fixed md:relative z-50 bg-white rounded-xl shadow-md w-4/5 md:w-1/5 p-4 transition-transform transform md:translate-x-0 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
                 <h1 className="text-lg font-bold mb-6">Ankit Code</h1>
                 <ul className="space-y-4">
                     <li className="font-semibold text-blue-500 flex items-center gap-2"><MdDashboard /> <p>Dashboard</p></li>
@@ -39,29 +39,29 @@ const Dashboard = () => {
             {/* Main Content */}
             <div className="flex-1 p-6">
                 {/* Navbar */}
-                <div className="flex justify-between items-center mb-6 bg-white p-3 rounded-xl">
-                    <div className="flex items-center">
+                <div className="flex flex-wrap justify-between items-center mb-6 bg-white p-3 rounded-xl">
+                    <div className="flex items-center w-full sm:w-auto">
                         <button
                             className="md:hidden p-2"
                             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                         >
                             <HiOutlineMenuAlt3 className="w-6 h-6 text-gray-600" />
                         </button>
-                        <div className="flex gap-4 items-center ">
+                        <div className="flex gap-4 items-center w-full sm:w-auto">
                             <h2 className="text-2xl font-bold ml-2">Dashboard</h2>
-                            <div className="p-1 pl-3 bg-slate-200 rounded-md flex items-center gap-3">
+                            <div className="p-1 pl-3 bg-slate-200 rounded-md flex items-center gap-3 w-full sm:w-auto">
                                 <FaSearch className="w-5 h-5 text-gray-500" />
                                 <input
                                     type="search"
                                     placeholder="search"
-                                    className="p-1 outline-none bg-slate-200"
+                                    className="p-1 outline-none bg-slate-200 w-full"
                                 />
                             </div>
                         </div>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 w-full sm:w-auto justify-end mt-4 sm:mt-0">
                         <FaBell className="w-5 h-5 text-gray-500" />
-                        <div className=" flex items-center gap-3">
+                        <div className="flex items-center gap-3">
                             <img
                                 src="https://via.placeholder.com/40"
                                 alt="Profile"
@@ -77,7 +77,7 @@ const Dashboard = () => {
                 </div>
 
                 {/* Content Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {/* Project Cards */}
                     <MyProject />
 
@@ -114,7 +114,7 @@ const Dashboard = () => {
                 </div>
 
                 {/* Timeline and Messages */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
                     {/* Project */}
                     <div className="lg:col-span-1">
                         <MyProject />

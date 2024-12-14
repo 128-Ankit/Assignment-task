@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:4000/api";
+const BASE_URL = "https://task-backend-2hl0.onrender.com/api";
 
 export const fetchTasks = async () => {
   const response = await fetch(`${BASE_URL}/tasks`);
